@@ -38,4 +38,13 @@ public class Dog {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "breed=" + breed +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

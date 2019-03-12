@@ -1,3 +1,7 @@
+Spring három lehetőséget biztosít a dependency injectionra
+    1. setter
+    2. constructor
+    3. refektion (nem szereti a szakma ha ezen keresztül állítjuk be a private fieldeket)
 
 ¤ application.properties
     Üres, mert spring boot convension over configuration alapelvek mentén default értékekkel dolgozik (hasonlóan, mint a maven).
@@ -17,9 +21,64 @@ ANNOTATION
     Arra add utasítást, hogy abból az osztályból amin van jöjjön létre egy példány és az jelenjen meg az application contextbe.
     Ez a legegyszerűbb mondja annak, hogy egy osztály a spring által managelté tudjunk tenni.
 
-¤
+¤ @Autowired
+    Amit a @Component annotation-al átadtunk a springnek azt ezzel az annotation-nal tudjuk elmenteni egy fielbe.
 
+¤ @PostConstruct
+    Amikor a context felépül és a dependency-k autowired-elésre kerül, akkor szabad ezeket lefutattni.
+
+¤ @Configuration
+    Ezzel az annotation-nal megjelőlt osztályokban @Bean definíciós metódusok lehetnek.
+
+¤ @Bean
+    Berakja a metódust a springes application contextbe
+    Instance-t (példányosításra) való
+
+¤ @Bean(variable = "String")
+    A springes application context-be vagyis a spring IOC konténerbe ilyen néven fog megjelenni.
+
+¤ @Service
+    Lényegében ugyan az, mint a Component
+    Stateless-nek kell lennie
+
+¤ @RestController
+    Ebben az osztályban az összes olyan metódus ami valamilyen http-s mapping-el megjelölve (például @GetMapping vagy @PostMappin) azokat mind egy restes ipi endpoint-ként fogja kiajánlani.
+
+
+¤ @GetMapping("url address")
+    A megadott uton beérkező get method-usú kérésekre reagál
+    Visszaküldött adatokat megpróbálja JSON-é serializálni (alakitani)
+
+¤ @PostMapping("url address")
+    A megadott uton beérkező post method-usú kérésekre reagál
+
+¤ @RequestMapping("url")
+    Az összes itt lévő endpoint (url címnek) lehet megadni az elejét
+
+¤ @PutMapping("{variable}")
+    Meglévő objektumot lehet vele updatelni
+
+¤ @RequestBody
+    Ha megfelelően formázott paramétert kap a spring képes az objektumból deserializálni
+    Metódus paraméterében használjuk
+
+¤ @PathVariable
+    @PutMapping annotation-ból kapott változót teszi be a metód paraméterébe
+
+¤
 
 PACKAGE
 ¤ service
     business logic-ot szoktuk itt implementálni
+
+¤ model
+    blueprint
+
+¤ config
+    web security helye, bean config
+
+¤ controller
+    route kezelés
+
+Settings
+    ¤Build project automatically -> settings
