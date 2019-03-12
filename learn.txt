@@ -1,0 +1,25 @@
+
+¤ application.properties
+    Üres, mert spring boot convension over configuration alapelvek mentén default értékekkel dolgozik (hasonlóan, mint a maven).
+    server.port=8888
+
+Beaneknek és POJO-knak szüksége van null paraméteres konstruktorra.
+
+ANNOTATION
+¤ @SpringBootApplication
+    SpringApplication.run belépési pont, mely a belépési pontott tartalmazó osztályt kapja meg reflectionnel.
+    Minden olyan osztályt amit szeretnénk, hogy a spring boot vezérljen ez alá kell tenni.
+
+¤ @SpringBootTest
+    Out of the box fut
+
+¤ @Component
+    Arra add utasítást, hogy abból az osztályból amin van jöjjön létre egy példány és az jelenjen meg az application contextbe.
+    Ez a legegyszerűbb mondja annak, hogy egy osztály a spring által managelté tudjunk tenni.
+
+¤
+
+
+PACKAGE
+¤ service
+    business logic-ot szoktuk itt implementálni

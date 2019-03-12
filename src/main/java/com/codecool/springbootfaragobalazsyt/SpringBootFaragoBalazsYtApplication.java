@@ -9,5 +9,4 @@ public class SpringBootFaragoBalazsYtApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootFaragoBalazsYtApplication.class, args);
     }
-
 }
